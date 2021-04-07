@@ -9,20 +9,44 @@ public class PlayerController : MonoBehaviour
     public float forwardSpeed;
     private int currentLane = 1; //0-left; 1-middle; 2-right;
     public float laneDistance = 2.5f; //distance between lanes
+    public float jumpForce;
+    public float gravity = -20;
+    private bool sliding = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        transform.position = new Vector3(0f, 1f, 0f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!PlayerManager.isGameStarted)
+            return;
         direction.z = forwardSpeed;
+        
 
+        if (controller.isGrounded)
+        {
+            if (SwipeManager.swipeUp)
+            {
+                Jump();
+            }
+        }
+        else
+        {
+            direction.y += gravity * Time.deltaTime;
+        }
+
+        if (SwipeManager.swipeDown)
+        {
+            StartCoroutine(Slide());
+        }
         // get LaneChange Status
-
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        if (SwipeManager.swipeRight)
         {
             currentLane++;
             if(currentLane==3)
@@ -31,7 +55,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (SwipeManager.swipeLeft)
         {
             currentLane--;
             if (currentLane == -1)
@@ -52,11 +76,60 @@ public class PlayerController : MonoBehaviour
             targetPos += Vector3.right * laneDistance;
         }
 
-        transform.position = targetPos;
+
+        if (transform.position != targetPos)
+        {
+            Vector3 diff = targetPos - transform.position;
+            Vector3 moveDir = diff.normalized * 25 * Time.deltaTime;
+            if (moveDir.sqrMagnitude < diff.magnitude)
+                controller.Move(moveDir);
+            else
+                controller.Move(diff);
+        }
     }
 
     private void FixedUpdate()
     {
+        if (!PlayerManager.isGameStarted)
+            return;
         controller.Move(direction * Time.fixedDeltaTime);
+    }
+
+    private void Jump()
+    {
+        direction.y = jumpForce;
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        
+        if(hit.transform.tag == "Obstacle")
+        {
+            Debug.Log(hit.transform.position);
+            Debug.Log(transform.position);
+            PlayerManager.gameover = true;
+        }
+    }
+
+    private IEnumerator Slide()
+    {
+        if (sliding)
+            yield break;
+        sliding = true;
+        var newScale = new Vector3(transform.localScale.x, transform.localScale.y * 0.5f, transform.localScale.z);
+        var newPos = new Vector3(transform.position.x, 0.5f, transform.position.z);
+        transform.position = newPos;
+        transform.localScale = newScale;
+        controller.center = new Vector3(0, -0.5f, 0);
+        controller.height = 1f;
+        yield return new WaitForSeconds(1.3f);
+        controller.center = new Vector3(0, 0, 0);
+        controller.height = 2f; 
+        newScale = new Vector3(transform.localScale.x, transform.localScale.y * 2f, transform.localScale.z);
+
+        transform.localScale = newScale;
+        newPos = new Vector3(transform.position.x, 1f, transform.position.z);
+        transform.position = newPos;
+        sliding = false;
     }
 }
