@@ -13,5 +13,9 @@ public class Events : MonoBehaviour
         // load menu scene
     }
 
+    public static void LoadFpsScene()
+    {
+        SceneManager.LoadScene("Shooting_Scene");
+    }
 
 }

@@ -1,0 +1,115 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.0f1 (c7b5465681fb) revision 13088070'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19042.867; Version 2009; 64bit' Language: 'en' Physical Memory: 8061 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.0f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/Denis/Proiecte/Game Design/Run-and-Gun/Run and Gun
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+65178
+Successfully changed project path to: C:/Users/Denis/Proiecte/Game Design/Run-and-Gun/Run and Gun
+C:/Users/Denis/Proiecte/Game Design/Run-and-Gun/Run and Gun
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 39.67 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.0f1 (c7b5465681fb)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Denis/Proiecte/Game Design/Run-and-Gun/Run and Gun/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 Ti (ID=0x2191)
+    Vendor:   
+    VRAM:     5991 MB
+    Driver:   27.21.14.6192
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56732
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003214 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 22.11 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.694 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.002112 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.697 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1212 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 59.5 MB.
+System memory in use after: 59.6 MB.
+
+Unloading 22 unused Assets to reduce memory usage. Loaded Objects now: 1642.
+Total: 2.361400 ms (FindLiveObjects: 0.250900 ms CreateObjectMapping: 0.073300 ms MarkObjects: 1.974300 ms  DeleteObjects: 0.061000 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Models/RoadWorksBarrierLow.fbx
+  artifactKey: Guid(f2df0956b929c5a4c9cfa6796b88eb36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/RoadWorksBarrierLow.fbx using Guid(f2df0956b929c5a4c9cfa6796b88eb36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1da6c34279100e7007262053a4a7a706') in 0.238561 seconds
+  Import took 0.241130 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000580 seconds.
+  path: Assets/Models/TrafficCone.fbx
+  artifactKey: Guid(97f4c5664bf14c049a0d648462b4b3c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/TrafficCone.fbx using Guid(97f4c5664bf14c049a0d648462b4b3c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7377e77cda538b88fcf1bd66a6b00614') in 0.025347 seconds
+  Import took 0.028128 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Models/RoadWorksBarrierHigh.fbx
+  artifactKey: Guid(bcbe2d3f54c32954db9baa38f78c9727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/RoadWorksBarrierHigh.fbx using Guid(bcbe2d3f54c32954db9baa38f78c9727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eddd9e205fe291fe793af4dd1456e5cd') in 0.023818 seconds
+  Import took 0.026242 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Models/Road.fbx
+  artifactKey: Guid(c3ca6a09bd1d9c4488fa732660cf312c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Road.fbx using Guid(c3ca6a09bd1d9c4488fa732660cf312c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f4bcab291a4ee7db7185b5f6c96e3d3c') in 0.028128 seconds
+  Import took 0.030884 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.132034 seconds.
+  path: Assets/Models/Road 1.fbx
+  artifactKey: Guid(6fc3d59ff7de74748b8a60cf45023366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Road 1.fbx using Guid(6fc3d59ff7de74748b8a60cf45023366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e76d0fcd02d8e4771ec828176cbed30e') in 0.079474 seconds
+  Import took 0.082170 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

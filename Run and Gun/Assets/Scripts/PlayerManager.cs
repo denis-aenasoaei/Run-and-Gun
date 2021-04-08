@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
 
     public static bool isGameStarted;
     public GameObject tapToStartText;
+    public GameObject abilityButton1;
 
 
     void Start()
@@ -25,10 +26,13 @@ public class PlayerManager : MonoBehaviour
         {
             Time.timeScale = 0;
             gameOverPanel.SetActive(true);
+            Destroy(abilityButton1);
         }
         if (SwipeManager.tap)
         {
             isGameStarted = true;
+
+            abilityButton1.SetActive(true);
             Destroy(tapToStartText);
         }
     }

@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        transform.position = new Vector3(0f, 1f, 0f);
     }
 
     // Update is called once per frame
@@ -31,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
         if (controller.isGrounded)
         {
+            transform.position = new Vector3(transform.position.x, 1, transform.position.z);
             if (SwipeManager.swipeUp)
             {
                 Jump();
@@ -105,9 +105,11 @@ public class PlayerController : MonoBehaviour
         
         if(hit.transform.tag == "Obstacle")
         {
-            Debug.Log(hit.transform.position);
-            Debug.Log(transform.position);
             PlayerManager.gameover = true;
+        }
+        else if(hit.transform.tag == "Enemy")
+        {
+            Events.LoadFpsScene();
         }
     }
 
